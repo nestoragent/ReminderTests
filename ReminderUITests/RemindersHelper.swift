@@ -100,19 +100,13 @@ class RemindersHelper  {
         repeat {
             var predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete Reminder")
             var reminders = remindersApp.tables.buttons.containing(predicate)
-            print("size: \(reminders.count)")
             if reminders.element(boundBy: 0).isHittable {
-                print("value: \(reminders.element(boundBy: 0).label)")
                 reminders.element(boundBy: 0).tap()
                 remindersApp.tables.buttons["Delete"].tap()
-                print("size2: \(reminders.count)")
             }
             index = reminders.count
         } while index > 0
-        
-//        xcodebuild -workspace ReminderWork.xcworkspace -scheme "Reminder" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.2' test -only-testing:ReminderUITests
     }
-    
     
     func checkThatReminderDeleted(reminderName: String) {
         let predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete \(reminderName)")
