@@ -69,8 +69,6 @@ class RemindersHelper  {
         let predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete \(reminderName)")
         let reminders = remindersApp.buttons.containing(predicate)
         let reminderValue = reminders.element(boundBy: 1).label
-        print("out String \(checkString)")
-        print("value: \(reminderValue)")
         XCTAssertTrue(reminderValue.contains(checkString))
     }
     
