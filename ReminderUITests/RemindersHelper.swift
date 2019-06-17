@@ -94,7 +94,7 @@ class RemindersHelper  {
     func deleteAllReminders() {
         var index = 0
         repeat {
-            var predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete Reminder")
+            var predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete")
             var reminders = remindersApp.tables.buttons.containing(predicate)
             if reminders.element(boundBy: 0).isHittable {
                 reminders.element(boundBy: 0).tap()
