@@ -44,7 +44,6 @@ class ReminderCreateUITests: XCTestCase {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd"
         let dateString = dateFormatter.string(from: currentDate)
-        print("date: \(dateString)")
         return dateString
     }
 
