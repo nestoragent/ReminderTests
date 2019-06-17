@@ -79,9 +79,7 @@ class RemindersHelper  {
         let reminders = remindersApp.buttons.containing(predicate)
         reminders.element(boundBy: 1).tap()
         let deleteButton = remindersApp.tables.buttons["Delete"]
-//        tablesQuery.buttons["More"].tap()
         deleteButton.tap()
-        //        remindersApp.buttons["Done"].tap()
     }
     
     func stackOtherLists() {
@@ -111,7 +109,6 @@ class RemindersHelper  {
     func checkThatReminderDeleted(reminderName: String) {
         let predicate = NSPredicate(format: "label CONTAINS[c] %@", "Delete \(reminderName)")
         let reminders = remindersApp.buttons.containing(predicate)
-        print("count: \(reminders.count)")
         XCTAssertTrue(0 == reminders.count)
     }
     
